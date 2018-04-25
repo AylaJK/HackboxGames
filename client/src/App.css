@@ -1,32 +1,17 @@
-/* Austin's CSS */
-.socialSet{
-  height: 100%;
+.app {
+  text-align: center;
 }
-.fa{
+
+.intro {
+  font-size: large;
+}
+
+/* Austin's CSS */
+
+:global(.fa) {
   font-size: 1.75rem;
   margin: 0.5rem;
   color: white;
   cursor: pointer;
 }
 
-.navbar-brand{
-  color: darkorange !important;
-  font-size: 1.75rem;
-}
-.navbar{
-  padding: 0;
-}
-.profile{
-  float: right;
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
-}
-.profile-name{
-  color: white;
-  line-height: 3rem;
-
-}
-.mar-right{
-  margin-right: 1rem;
-}
