@@ -164,6 +164,9 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  modules: true,
+                  sourceMap: true,
+                  localIdentName: '[name]__[local]___[hash:base64:5]',
                 },
               },
               {
@@ -190,10 +193,47 @@ module.exports = {
           },
           {
             test:/\.scss$/,
-            loaders: [
+            use: [
               require.resolve('style-loader'),
-              require.resolve('css-loader'),
-              require.resolve('sass-loader')
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 3,
+                  modules: true,
+                  sourceMap: true,
+                  localIdentName: '[name]__[local]___[hash:base64:5]',
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                  sourceMap: true,
+                },
+              },
+              // resolves relative paths in url() statements based on the original source file.
+              require.resolve('resolve-url-loader'),
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  sourceMap: true,
+                  outputStyle: 'expanded',
+                },
+              },
             ]
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.

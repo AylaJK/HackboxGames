@@ -15,7 +15,7 @@ app.use(cookieParser('secret'));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'client/build/index.html')));
 
-app.get('/hello', (req, res) => res.send({ express: 'Hello From Express' }));
+app.get('/hello', (req, res) => res.send({ express: 'Hello From the Express Server' }));
 
 process.on('unhandledRejection', (r, p) => console.log("Possibly Unhandled Rejection at: Promise ", p, " reason: ", r));
 
