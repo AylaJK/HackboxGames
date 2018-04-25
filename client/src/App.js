@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import {Switch, Route} from "react-router-dom";
+import {Route, BrowserRouter as Router} from "react-router-dom";
 import {Home} from "./components/Home";
-import {Login} from "./components/Login"
+import {Login} from "./components/Login";
+import {Header} from "./components/Header";
 class App extends Component {
 	state = {
     response: ''
@@ -36,11 +37,14 @@ class App extends Component {
   }*/
   render(){
       return(
-          <Switch>
-            <Route exact path={"/"} component={Home}/>
-            <Route path={"/home"} component={Home}/>
-            <Route path={"/login"} component={Login}/>
-          </Switch>
+          <Router>
+              <div>
+                <Route path={"/"} component={Header}/>
+                <Route exact path={"/"} component ={Home}/>
+                <Route path={"/home"} component={Home}/>
+                <Route path={"/login"} component={Login}/>
+              </div>
+          </Router>
       );
   }
 }
