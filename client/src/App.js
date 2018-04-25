@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-//import logo from './logo.svg';
-import style from './App.css';
-import {Header} from "./components/Header";
+import React, { Component } from "react";
+import style from "./App.css";
+import {Switch, Route} from "react-router-dom";
 import {Home} from "./components/Home";
-
+import {Login} from "./components/Login"
 class App extends Component {
 	state = {
     response: ''
   };
 
-  componentDidMount() {
+  /*componentDidMount() {
     this.callApi()
       .then(res => this.setState({ response: res.express }))
       .catch(err => console.log(err));
@@ -25,18 +24,24 @@ class App extends Component {
   };
 
   render() {
-      let user = {
-        name: "Austin Wattling",
-      };
     return (
       <div className={style.app}>
-          <Header user={user}/>
+          <Header/>
           <Home/>
         <p className={style.intro}>
           {this.state.response} <br />
         </p>
       </div>
     );
+  }*/
+  render(){
+      return(
+          <Switch>
+            <Route exact path={"/"} component={Home}/>
+            <Route path={"/home"} component={Home}/>
+            <Route path={"/login"} component={Login}/>
+          </Switch>
+      );
   }
 }
 

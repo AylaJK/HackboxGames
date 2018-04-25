@@ -1,11 +1,11 @@
 import React from "react";
 import {Header} from "./Header";
-export class Home extends React.Component {
+export class Login extends React.Component {
     render() {
         return (
             <div>
                 <Header/>
-                <h1>Hello This is the Home Content</h1>
+                <h1>Hello this is the Login Place</h1>
             </div>
         );
     };
