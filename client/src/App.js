@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import style from './App.css';
+import {Header} from "./components/Header";
+import {Home} from "./components/Home";
 
 class App extends Component {
 	state = {
@@ -23,15 +25,15 @@ class App extends Component {
   };
 
   render() {
+      let user = {
+        name: "Austin Wattling",
+      };
     return (
       <div className={style.app}>
-        <header className={style.header}>
-          <img src={logo} className={style.logo} alt="logo" />
-          <h1 className={style.title}>Welcome to React</h1>
-        </header>
+          <Header user={user}/>
+          <Home/>
         <p className={style.intro}>
           {this.state.response} <br />
-          To get started, edit <code>client/src/App.js</code> and save to reload.
         </p>
       </div>
     );
