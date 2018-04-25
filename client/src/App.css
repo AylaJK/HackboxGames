@@ -1,28 +1,31 @@
-.App {
-  text-align: center;
+/* Austin's CSS */
+.socialSet{
+  height: 100%;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.fa{
+  font-size: 1.75rem;
+  margin: 0.5rem;
   color: white;
+  cursor: pointer;
 }
-
-.App-title {
-  font-size: 1.5em;
+.navbar-brand{
+  color: darkorange !important;
+  font-size: 1.75rem;
 }
-
-.App-intro {
-  font-size: large;
+.navbar{
+  padding: 0;
 }
+.profile{
+  float: right;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.profile-name{
+  color: white;
+  line-height: 3rem;
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+}
+.mar-right{
+  margin-right: 1rem;
 }
