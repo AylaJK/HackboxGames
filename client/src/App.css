@@ -13,12 +13,12 @@
   font-size: 1.75rem;
 }
 .navbar{
-  padding: 0;
+  padding: 0 1em;
 }
 .profile{
   float: right;
   display: flex;
-  flex-direction: row;
+  flex-direction: row;;
   cursor: pointer;
 }
 .profile-name{

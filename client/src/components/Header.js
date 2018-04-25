@@ -1,9 +1,17 @@
 import React from "react";
 import {SocialSet} from "./SocialSet";
 export class Header  extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            loggedIn: false,
+            name: "",
+        }
+    }
+
     render() {
         let button;
-        if(this.props.user.name === "null"){
+        if(this.state.loggedIn === false){
             button =
                 <div>
                     <button type="button" className="btn btn-outline-success mar-right">Login</button>
@@ -12,7 +20,7 @@ export class Header  extends React.Component {
             button =
                 <div className="profile">
                     <div className="profile-name">
-                        {this.props.user.name}
+                        {this.state.name}
                     </div>
                     <span className="profile-icon fa fa-user"/>
                 </div>
