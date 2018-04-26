@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import style from "./App.css";
 import {Route, BrowserRouter as Router} from "react-router-dom";
 import {Home} from "./components/Home";
 import {Login} from "./components/Login";
@@ -26,10 +26,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={style.app}>
           <Header/>
           <Home/>
-        <p className="App-intro">
+        <p className={style.intro}>
           {this.state.response} <br />
         </p>
       </div>

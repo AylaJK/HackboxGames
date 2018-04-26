@@ -1,0 +1,35 @@
+.mar-right{
+  margin-right: 1rem;
+}
+
+.profile{
+  float: right;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.name{
+  color: white;
+  line-height: 3rem;
+}
+
+.icon {
+ composes: profile-icon fa fa-user from global;
+}
+
+.loginBtn {
+  composes: btn btn-outline-success from global;
+  composes: mar-right;
+}
+
+.navbar {
+  composes: navbar navbar-expand-sm navbar-dark bg-dark from global;
+  padding: 0 1em;
+}
+
+.branding {
+  composes: text-center flex-fill justify-content-center from global;
+  color: darkorange !important;
+  font-size: 1.75rem;
+}

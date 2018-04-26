@@ -1,5 +1,6 @@
 import React from "react";
 import {SocialSet} from "./SocialSet";
+import style from "./Header.css";
 export class Header  extends React.Component {
     constructor(props){
         super(props);
@@ -21,21 +22,21 @@ export class Header  extends React.Component {
         if(this.state.loggedIn === false){
             button =
                 <div>
-                    <button type="button" className="btn btn-outline-success mar-right">Login</button>
+                    <button type="button" className={style.loginBtn}>Login</button>
                 </div>
         }else{
             button =
-                <div className="profile">
-                    <div className="profile-name">
+                <div className={style.profile}>
+                    <div className={style.name}>
                         {this.state.name}
                     </div>
-                    <span className="profile-icon fa fa-user"/>
+                    <span className={style.icon}/>
                 </div>
         }
         return(
-            <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+            <nav className={style.navbar}>
                 <SocialSet/>
-                <div className="navbar-brand text-center flex-fill justify-content-center">Hackbox Games</div>
+                <div className={style.branding}>Hackbox Games</div>
                 {button}
             </nav>
         )};
