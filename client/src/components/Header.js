@@ -1,6 +1,7 @@
 import React from "react";
 import {SocialSet} from "./SocialSet";
 import style from "./Header.css";
+import { Link } from "react-router-dom";
 export class Header  extends React.Component {
     constructor(props){
         super(props);
@@ -22,7 +23,9 @@ export class Header  extends React.Component {
         if(this.state.loggedIn === false){
             button =
                 <div>
+                  <Link to="/login">
                     <button type="button" className={style.loginBtn}>Login</button>
+                  </Link>
                 </div>
         }else{
             button =
