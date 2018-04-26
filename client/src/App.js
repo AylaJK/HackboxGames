@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import style from './App.css';
+import React, { Component } from "react";
+import style from "./App.css";
+import { Main } from "./Main";
+import { Header } from "./components/Header";
+import { subscribeToTimer } from './socket';
 
 class App extends Component {
-	state = {
-    response: ''
+  state = {
+    response: 'Server RESTful Test',
+    timestamp: 'Server Socket Test',
   };
 
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({ response: res.express }))
       .catch(err => console.log(err));
+    subscribeToTimer((err, timestamp) => this.setState({ timestamp }));
   }
 
   callApi = async () => {
@@ -25,13 +29,11 @@ class App extends Component {
   render() {
     return (
       <div className={style.app}>
-        <header className={style.header}>
-          <img src={logo} className={style.logo} alt="logo" />
-          <h1 className={style.title}>Welcome to React</h1>
-        </header>
+				<Header/>
+				<Main/>
         <p className={style.intro}>
           {this.state.response} <br />
-          To get started, edit <code>client/src/App.js</code> and save to reload.
+          {this.state.timestamp}
         </p>
       </div>
     );
