@@ -10,6 +10,13 @@ export class Header  extends React.Component {
         }
     }
 
+    headerUpdate(name){
+        this.setState({
+            loggedIn: true,
+            name: name,
+        });
+    }
+
     render() {
         let button;
         if(this.state.loggedIn === false){
