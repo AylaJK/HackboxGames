@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import style from "./App.css";
 import { Main } from "./Main";
 import { Header } from "./components/Header";
+import { subscribeToTimer } from './socket';
 
 class App extends Component {
   state = {
-    response: ''
+    response: 'Server RESTful Test',
+    timestamp: 'Server Socket Test',
   };
 
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({ response: res.express }))
       .catch(err => console.log(err));
+    subscribeToTimer((err, timestamp) => this.setState({ timestamp }));
   }
 
   callApi = async () => {
@@ -29,7 +32,8 @@ class App extends Component {
 				<Header/>
 				<Main/>
         <p className={style.intro}>
-          {this.state.response}
+          {this.state.response} <br />
+          {this.state.timestamp}
         </p>
       </div>
     );
