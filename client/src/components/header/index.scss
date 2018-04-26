@@ -1,0 +1,47 @@
+$logo-break: 500px;
+$social-break: 768px;
+
+.navbar {
+    composes: navbar navbar-expand-sm navbar-dark bg-dark from global;
+    padding: 2px 1em;
+    height: 44px;
+}
+
+.logo {
+    composes: text-center justify-content-center from global;
+    order: 2;
+    flex: 1 1 auto;
+    composes: flex-row from "../../styles/layout.scss";
+    @media (max-width: $social-break) {
+      flex: none;
+      margin-left: 1rem;
+      margin-right: auto;
+    }
+    img {
+        width: 35px;
+        height: 35px;;
+        margin: auto 10px;
+    }
+    span {
+        color: darkorange !important;
+        font-size: 1.75rem;
+        @media (max-width: $logo-break) {
+            display: none;
+        }
+    }
+}
+
+.social {
+    margin-left: 1rem;
+    order: 1;
+    @media (max-width: $social-break) {
+        display: none;
+    }
+}
+
+
+.profile {
+    margin-right: 1rem;
+    order: 3;
+}
+
