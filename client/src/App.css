@@ -1,42 +1,11 @@
 .app {
-  text-align: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .intro {
-  font-size: large;
+    font-size: large;
 }
 
-/* Austin's CSS */
-
-:global(.fa) {
-  font-size: 1.75rem;
-  margin: 0.5rem;
-  color: white;
-  cursor: pointer;
-}
-:global(#root){
-   height: 100%;
-}
-
-html{
-  height: 100%;
-}
-body{
-  height: 100%;
-}
-:global(.fillScreen){
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-:global(.fillChild){
-  flex-grow: 1;
-}
-
-:global #main > div{
-  display: flex;
-  height: 100%;
-}
