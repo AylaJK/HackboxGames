@@ -1,5 +1,4 @@
-$logo-break: 500px;
-$social-break: 768px;
+@import "Styling/_variables.scss";
 
 .navbar {
     composes: navbar navbar-expand-sm navbar-dark bg-dark from global;
@@ -12,7 +11,7 @@ $social-break: 768px;
     order: 2;
     flex: 1 1 auto;
     composes: flex-row from "Styling/layout.scss";
-    @media (max-width: $social-break) {
+    @media (max-width: $header-social-breakpoint) {
       flex: none;
       margin-left: 1rem;
       margin-right: auto;
@@ -25,7 +24,7 @@ $social-break: 768px;
     span {
         color: darkorange !important;
         font-size: 1.5rem;
-        @media (max-width: $logo-break) {
+        @media (max-width: $header-logo-breakpoint) {
             display: none;
         }
     }
@@ -34,7 +33,7 @@ $social-break: 768px;
 .social {
     margin-left: 1rem;
     order: 1;
-    @media (max-width: $social-break) {
+    @media (max-width: $header-social-breakpoint) {
         display: none;
     }
 }
