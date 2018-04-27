@@ -4,14 +4,14 @@ $social-break: 768px;
 .navbar {
     composes: navbar navbar-expand-sm navbar-dark bg-dark from global;
     padding: 2px 1em;
-    height: 44px;
+    height: 56px;
 }
 
 .logo {
-    composes: text-center justify-content-center from global;
+    composes: navbar-brand text-center justify-content-center from global;
     order: 2;
     flex: 1 1 auto;
-    composes: flex-row from "../../styles/layout.scss";
+    composes: flex-row from "Styling/layout.scss";
     @media (max-width: $social-break) {
       flex: none;
       margin-left: 1rem;
@@ -24,7 +24,7 @@ $social-break: 768px;
     }
     span {
         color: darkorange !important;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         @media (max-width: $logo-break) {
             display: none;
         }

@@ -5,7 +5,7 @@
 .profile {
     float: right;
     cursor: pointer;
-    composes: flex-row from "../../styles/layout.scss";
+    composes: flex-row from "Styling/layout.scss";
 }
 
 .name {

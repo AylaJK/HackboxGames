@@ -12,5 +12,5 @@
 
 .copyright {
     composes: text-center from global;
-    composes: text-small from '../../styles/font.scss';
+    composes: text-small from 'Styling/font.scss';
 }
