@@ -6,7 +6,7 @@ import {Login} from "./components/Login";
 export class Main extends Component {
   render(){
 		return(
-      <main>
+      <main className={"fillScreen"} id={"main"}>
         <Switch>
           <Route exact path={"/"} component={Home}/>
           <Route path={"/home"} component={Home}/>
