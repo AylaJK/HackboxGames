@@ -5,10 +5,9 @@ export const Home = () => {
     return (
         <div className={style.fillScreen}>
             <div className={style.panelBox}>
-                <Panel name={"Game A"} order={1}/>
-                <Panel name={"Game B"} order={2}/>
-                <Panel name={"Game C"} order={3}/>
-                <Panel name={"Game D"} order={4}/>
+                <Panel name={"Carbs Against Humility"} order={1} active={false}/>
+                <Panel name={"Fakegage"} order={2} active={true}/>
+                <Panel name={"QuickHash"} order={3} active={false}/>
             </div>
         </div>
     );
