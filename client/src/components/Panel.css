@@ -1,3 +1,42 @@
 .panel{
     composes: col-sm from global;
+    border-right: black solid 2px;
+    transition: all 0.5s;
+}
+.panel:hover{
+    flex-grow: 1.5;
+}
+.innerPanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #C5D1EB;
+    transition: all 0.5s;
+}
+.innerPanel:hover{
+    color: darkorange;
+    padding-bottom: 30%;
+}
+.joinBtn {
+    composes: btn btn-outline-success from global;
+}
+.constructionBtn{
+    composes: btn btn-dark from global;
+}
+.createBtn{
+    composes: btn btn-outline-warning from global;
+}
+.normalBtn{
+    composes: btn btn-outline-light from global;
+}
+.btnDiv{
+    padding-top: 10%;
+}
+.accent{
+    margin-top: 15%;
+    margin-bottom: 15%;
+    width: 100%;
+    height: 5%;
 }
