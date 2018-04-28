@@ -1,0 +1,4 @@
+.wrapper {
+    composes: container-fluid from "Styling/layout.scss";
+    background-color: blue;
+}

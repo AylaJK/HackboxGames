@@ -1,7 +1,5 @@
 .footer {
-    composes: py-2 mt-3 from global;
-    position: absolute;
-    bottom: 0;
+    padding: .5rem 0;
     width: 100%;
     color: rgba(255,255,255,.6);
     background-color: rgba(0,0,0,.2);

@@ -1,3 +1,3 @@
 .panel{
-    flex-grow: 1;
+    composes: col-sm from global;
 }

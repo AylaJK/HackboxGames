@@ -3,7 +3,7 @@ import style from "./Home.css";
 import {Panel} from "./Panel"
 export const Home = () => {
     return (
-        <div className="fillScreen">
+        <div className={style.wrapper}>
             <div className={style.panelBox}>
                 <Panel name="Game A" order={1}/>
                 <Panel name="Game B" order={2}/>
