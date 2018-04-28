@@ -1,4 +1,77 @@
 .wrapper {
     composes: container-fluid from "Styling/layout.scss";
-    background-color: blue;
+    background-color: #5C6976;
+    justify-content: center;
+    align-items: center;
+}
+.contain{
+    composes: container from global;
+    background-color: #C5D1EB;
+    border: darkorange solid 2px;
+}
+.inside{
+    composes: col from global;
+    border-right: darkorange solid 2px;
+
+}
+.bottom{
+    composes: row from global;
+    background-color: #C5D1EB;
+    padding-top: 5%;
+    border-top: darkorange solid 2px;
+}
+.row{
+    composes: row from global;
+}
+form{
+    margin-bottom: 5%;
+    padding-top: 5%;
+    justify-content: left;
+}
+.left{
+    float: left;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.formGroup{
+    composes: form-group from global;
+    text-align: left;
+}
+.formControl{
+    composes: form-control from global;
+}
+.room{
+    margin-top: 500px;
+    padding-top: 5%;
+}
+.warning{
+    color: red;
+}
+.loader {
+    border: 2px solid grey;
+    border-radius: 50%;
+    border-top: 2px solid darkorange;
+    width: 1.4em;
+    height: 1.4em;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loadingPad{
+    padding-bottom: 1em;
+    display: flex;
+    justify-content: center;
+}
+.warningSpace{
+    color: #C5D1EB;
 }
