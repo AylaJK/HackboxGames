@@ -1,0 +1,18 @@
+.loginBtn {
+    composes: btn btn-outline-success from global;
+}
+
+.profile {
+    float: right;
+    cursor: pointer;
+    composes: flex-row from "Styling/layout.scss";
+}
+
+.name {
+    color: white;
+    line-height: 3rem;
+}
+
+.icon {
+    composes: fa fa-user from global;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Home.css";
+import style from "./Panel.css";
 export class Panel  extends React.Component {
     constructor(props){
         super(props);

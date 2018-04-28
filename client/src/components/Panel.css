@@ -1,0 +1,3 @@
+.panel{
+    composes: col-sm from global;
+}

@@ -1,0 +1,26 @@
+.flex-row,
+.flex-column {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-fill {
+    flex: 1 1 auto;
+}
+
+.container-fluid {
+    composes: container-fluid from global;
+    composes: flex-fill flex-column;
+}
+
+.container {
+    composes: container from global;
+    composes: flex-fill flex-column;
+}

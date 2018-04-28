@@ -1,6 +1,23 @@
-body {
-  background: lighten(red, 20%);
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+@import "Styling/_variables.scss";
+
+:global {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    .fa {
+        font-size: 1.75rem;
+        margin: 0.5rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    html,
+    body,
+    #root {
+        height: 100%;
+    }
+
 }

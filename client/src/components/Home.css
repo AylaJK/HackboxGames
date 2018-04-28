@@ -1,4 +1,10 @@
+.wrapper {
+    composes: container-fluid from "Styling/layout.scss";
+}
+
 .panelBox{
+    composes: row from global;
+    composes: flex-fill from "Styling/layout.scss";
     background-color: #5C6976;
     display: flex;
     flex-direction: row;
