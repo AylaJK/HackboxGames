@@ -23,7 +23,7 @@ export class LoginOptions extends React.Component {
                             <button type="submit" className={style.createBtn} disabled={this.props.submitting}>Login</button>
                         </form>
                         <div className={style.left}>
-                            <a href={""}>Forgot your Password </a>
+                            <a href={""}>Forgot your Password? </a>
                         </div>
                     </div>
                 </div>

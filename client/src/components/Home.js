@@ -1,6 +1,6 @@
 import React from "react";
-import style from "./Home.css";
-import {Panel} from "./Panel"
+import style from "./homeParts/Home.css";
+import {Panel} from "./homeParts/Panel"
 export const Home = () => {
     return (
         <div className={style.wrapper}>

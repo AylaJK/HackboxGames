@@ -90,11 +90,11 @@ export class Login extends React.Component {
                 <div className={style.contain}>
                     {options}
                 </div>
-                <div className={style.homeBtn}>
-                    <Link to="/home">
+                <Link to="/home">
+                    <div className={style.homeBtn}>
                         <span className={"fa fa-arrow-left"}/><p>Back to Games</p>
-                    </Link>
-                </div>
+                    </div>
+                </Link>
             </div>
         );
     };
