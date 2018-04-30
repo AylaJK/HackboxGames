@@ -1,27 +1,64 @@
 import React from "react";
-import style from "./Login.css";
+import style from "./loginParts/Login.css";
+import {LoginOptions} from "./loginParts/LoginOptions";
+import {CreateOptions} from "./loginParts/CreateOptions";
+
 export class Login extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             message: "",
+            submitting: false,
+            loginOptions: true,
         }
     }
-    login(e){
+    // Method called when someone enters Native Login credentials //
+    loginCredentials(e){
         e.preventDefault();
-        // TODO Form validation //
+        // TODO Form Sanitization //
         // Send form to server //
-        // Disable client form //
+        this.setState({
+            submitting: true,
+        });
         this.serverMessage("thinking")
     }
+    // Method called when someone attempts to create a new user //
+    createUser(e){
+        e.preventDefault();
+        // TODO Form Sanitization //
+        // Send form to server //
+        this.setState({
+            submitting: true,
+        });
+        this.serverMessage("thinking")
+    }
+    // Method called when someone attempts facebook loginParts
+    loginViaFacebook(){
+        console.log("Logging in via Facebook");
+    }
+    loginViaDiscord(){
+        console.log("Logging in via Discord");
+    }
+
+    // Method called whenever the server has something to tell the client //
     serverMessage(msg){
         this.setState({
             message: msg,
         });
     }
+
+    // Called to navigate to create user form and back when needed //
+    toggleLoginOptions (){
+        console.log("calling this");
+        this.setState({
+           loginOptions: !this.state.loginOptions,
+        });
+    }
+
     render() {
         let messageDiv;
-        if(this.state.message === "thinking"){
+        let options;
+        if(this.state.submitting === true){
             messageDiv = (
                 <div className={style.loadingPad}>
                     <div className={style.loader}/>
@@ -39,39 +76,20 @@ export class Login extends React.Component {
                     <p>{this.state.message}</p>
                 </div>);
         }
+        if(this.state.loginOptions === true){
+            options =(
+                <LoginOptions messagediv={messageDiv} submitting={this.state.submitting} onSubmit = {this.loginCredentials.bind(this)} createUser={this.toggleLoginOptions.bind(this)} facebook={this.loginViaFacebook.bind(this)} discord={this.loginViaDiscord.bind(this)}/>
+            );
+        }else{
+            options =(
+                <CreateOptions messagediv={messageDiv} submitting={this.state.submitting} onSubmit ={this.createUser.bind(this)} login={this.toggleLoginOptions.bind(this)}/>
+            );
+        }
         return (
             <div className={style.wrapper}>
                 <div className={style.contain}>
-                    <div className={style.row}>
-                        <div className={style.inside}>
-                            <div className={style.left}>
-                                <h2>Login</h2>
-                            </div>
-                            <form onSubmit={this.login.bind(this)}>
-                                <div className={style.formGroup}>
-                                    <input type="email" className={"form-control"} id={"email"} placeholder={"Email"}/>
-                                </div>
-                                <div className="form-group">
-                                    <input type={"password"} className={"form-control"} id={"pwd"} placeholder={"Password"}/>
-                                </div>
-                                <div className={style.formGroup + " form-check"}>
-                                        <input className="form-check-input" type="checkbox"/> Remember Me
-                                </div>
-                                {messageDiv}
-                                <button type="submit" className={"btn btn-outline-dark btn-lg"}>Login</button>
-                            </form>
-
-                        </div>
-                        <div className={style.inside}>
-                            <p>Login with Social Account</p>
-                        </div>
-                    </div>
-                    <div className={style.bottom}>
-                        Don't have an Account?
-                        <button>Create An Account</button>
-                    </div>
+                    {options}
                 </div>
-
             </div>
         );
     };

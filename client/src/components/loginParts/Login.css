@@ -6,19 +6,22 @@
 }
 .contain{
     composes: container from global;
-    background-color: #C5D1EB;
+    background-color: black;
     border: darkorange solid 2px;
+    color: white;
 }
 .inside{
     composes: col from global;
     border-right: darkorange solid 2px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .bottom{
     composes: row from global;
-    background-color: #C5D1EB;
-    padding-top: 5%;
+    background-color: black;
     border-top: darkorange solid 2px;
+    justify-content: center;
 }
 .row{
     composes: row from global;
@@ -73,5 +76,33 @@ form{
     justify-content: center;
 }
 .warningSpace{
-    color: #C5D1EB;
+    color: black;
+}
+
+.discordBtn{
+    composes: btn btn-dark btn-lg from global;
+    background-color: #7289DA;
+    border-color: #7289DA;
+}
+.createBtn{
+    composes: btn btn-warning btn-lg from global;
+}
+.facebookBtn{
+    composes: btn btn-dark btn-lg from global;
+    background-color: #3B5998;
+}
+.facebookBtn:hover, .createBtn:hover, .discordBtn:hover{
+    background-color: darkorange;
+}
+.discordBtn, .facebookBtn, .createBtn{
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.pad{
+    margin: 5%;
+}
+.arrow {
+    float: left;
+    cursor: pointer;
 }
