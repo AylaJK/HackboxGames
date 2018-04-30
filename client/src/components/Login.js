@@ -2,7 +2,7 @@ import React from "react";
 import style from "./loginParts/Login.css";
 import {LoginOptions} from "./loginParts/LoginOptions";
 import {CreateOptions} from "./loginParts/CreateOptions";
-
+import { Link } from "react-router-dom";
 export class Login extends React.Component {
     constructor(props){
         super(props);
@@ -89,6 +89,11 @@ export class Login extends React.Component {
             <div className={style.wrapper}>
                 <div className={style.contain}>
                     {options}
+                </div>
+                <div className={style.homeBtn}>
+                    <Link to="/home">
+                        <span className={"fa fa-arrow-left"}/><p>Back to Games</p>
+                    </Link>
                 </div>
             </div>
         );

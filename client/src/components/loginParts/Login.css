@@ -106,3 +106,7 @@ form{
     float: left;
     cursor: pointer;
 }
+.homeBtn > a{
+    text-decoration: none;
+    color: white;
+}

@@ -23,7 +23,7 @@ export class CreateOptions extends React.Component {
                             <button type="submit" className={style.createBtn} disabled={this.props.submitting}>Create Account</button>
                         </form>
                         <div className={style.arrow} onClick={this.props.login}>
-                            <span className={"fa fa-arrow-left"}/><p>Back to Login</p>
+                                <span className={"fa fa-arrow-left"}/><p>Back to Login</p>
                         </div>
                     </div>
                 </div>
