@@ -4,7 +4,11 @@
   "description": "HackboxGames",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "start": "nodemon",
+    "build:ts": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "npm run build:ts && npm run tslint",
+    "serve": "node build/server.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +30,7 @@
     "@types/socket.io": "^1.4.33",
     "nodemon": "^1.17.3",
     "ts-node": "^6.0.2",
+    "tslint": "^5.9.1",
     "typescript": "^2.8.3"
   },
   "nodemonConfig": {
