@@ -2,14 +2,15 @@
   "name": "hackboxgames",
   "version": "0.0.1",
   "description": "HackboxGames",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd client && npm start",
-    "server": "nodemon",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "deploy": "cd client && npm run build && cd .. && npm start",
-    "postinstall": "cd client && npm install"
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm run start:server\" \"npm run start:client\"",
+    "deploy": "node scripts/deploy.js",
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "postinstall": "npm run install:server && npm run install:client"
   },
   "repository": {
     "type": "git",
@@ -17,31 +18,8 @@
   },
   "author": "Austin W. & Kayleigh K.",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
-    "socket.io": "^2.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/body-parser": "^1.17.0",
-    "@types/cookie-parser": "^1.4.1",
-    "@types/express": "^4.11.1",
-    "@types/node": "^8.10.11",
-    "@types/socket.io": "^1.4.33",
-    "concurrently": "^3.5.1",
-    "nodemon": "^1.17.3",
-    "ts-node": "^6.0.2",
-    "typescript": "^2.8.3"
-  },
-  "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "ignore": [
-      "client/*"
-    ],
-    "ext": "js,jsx,ts,tsx",
-    "exec": "ts-node src/server.ts"
+    "concurrently": "^3.5.1"
   }
 }
