@@ -1,0 +1,11 @@
+.gameHead{
+    composes: row from global;
+    width: 100%;
+    color: darkorange;
+    justify-content: center;
+    margin-left: 0;
+}
+.leaveBtn{
+    composes: col from global;
+    text-align: right;
+}
