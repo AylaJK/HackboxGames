@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && npm start",
-    "server": "nodemon server.js",
+    "server": "nodemon",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "deploy": "cd client && npm run build && cd .. && npm start",
     "postinstall": "cd client && npm install"
@@ -24,12 +24,24 @@
     "socket.io": "^2.1.0"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/cookie-parser": "^1.4.1",
+    "@types/express": "^4.11.1",
+    "@types/node": "^8.10.11",
+    "@types/socket.io": "^1.4.33",
     "concurrently": "^3.5.1",
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.3",
+    "ts-node": "^6.0.2",
+    "typescript": "^2.8.3"
   },
   "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
     "ignore": [
       "client/*"
-    ]
+    ],
+    "ext": "js,jsx,ts,tsx",
+    "exec": "ts-node src/server.ts"
   }
 }
