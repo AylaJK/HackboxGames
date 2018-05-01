@@ -1,22 +1,10 @@
-.wrapper {
-    composes: container-fluid from "Styling/layout.scss";
-}
-
-.panelBox{
-    composes: row from global;
-    composes: flex-fill from "Styling/layout.scss";
-    background-color: #5C6976;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-}
 .panel{
-    flex-grow: 1;
+    composes: col-sm from global;
     border-right: black solid 2px;
     transition: all 0.5s;
 }
 .panel:hover{
-   flex-grow: 4;
+    flex-grow: 1.5;
 }
 .innerPanel{
     display: flex;
@@ -33,7 +21,7 @@
 }
 .joinBtn {
     composes: btn btn-outline-success from global;
- }
+}
 .constructionBtn{
     composes: btn btn-dark from global;
 }
