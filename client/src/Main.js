@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {Switch, Route} from "react-router-dom";
-import {Home} from "./components/Home";
-import {Login} from "./components/Login";
-import {Lobby} from "./components/Lobby";
+import {Home} from "./components/home";
+import {Login} from "./components/login";
+import {Lobby} from "./components/lobby";
 import style from "./Main.css";
 
 export class Main extends Component {

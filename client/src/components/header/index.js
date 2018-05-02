@@ -1,7 +1,7 @@
 import React from "react";
 import {SocialSet} from "./SocialSet";
 import {Profile} from "./Profile";
-import style from "./index.scss";
+import style from "./Header.scss";
 export class Header extends React.Component {
     constructor(props){
         super(props);

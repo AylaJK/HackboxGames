@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./lobbyParts/Lobby.css";
-import {LobbyHeader} from "./lobbyParts/LobbyHeader";
-import {PlayerList} from "./lobbyParts/PlayerList";
+import style from "./Lobby.css";
+import {LobbyHeader} from "./LobbyHeader";
+import {PlayerList} from "./PlayerList";
 export class Lobby extends React.Component  {
     constructor(props){
         super(props);

@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./loginParts/Login.css";
-import {LoginOptions} from "./loginParts/LoginOptions";
-import {CreateOptions} from "./loginParts/CreateOptions";
+import style from "./Login.css";
+import {LoginOptions} from "./LoginOptions";
+import {CreateOptions} from "./CreateOptions";
 import { Link } from "react-router-dom";
 export class Login extends React.Component {
     constructor(props){
