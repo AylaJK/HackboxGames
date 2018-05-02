@@ -1,31 +1,36 @@
-import express = require("express");
+import express from "express";
 const app = express();
 
-import bodyParser = require("body-parser");
-import cookieParser = require("cookie-parser");
-import path = require ("path");
+import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+import path from "path";
+import fs from "fs";
+const serverDirectory = fs.realpathSync(process.cwd());
+const clientDirectory = path.resolve(serverDirectory, "../client/");
 
-import http = require("http");
+import http from "http";
 const server = http.createServer(app);
 
-const io = require("socket.io")(server);
+import router from "./router";
 
-const port = process.env.PORT || 8000;
+import socketio from "socket.io";
+const io = socketio(server);
 
-app.use(express.static(path.join(__dirname, "../../client/build")));
+import ioevents from "./socket";
+
+app.set("port",  process.env.PORT || 8000);
+
+app.use(express.static(path.resolve(clientDirectory, "build")));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser("secret"));
 
-app.get("/", (req: any, res: any) => res.sendFile(path.join(__dirname, "../../client/build/index.html")));
+app.get("/", (req: express.Request, res: express.Response) => res.sendFile(path.resolve(clientDirectory, "build/index.html")));
+app.use("/", router);
 
-app.get("/hello", (req: any, res: any) => res.send({ express: "Hello From the Server REST API" }));
-
-io.on("connection", function(socket: any) {
-  socket.on("hello", () => socket.emit("hello", { socketIo: "Hello From the Server Websocket API" }));
-});
+ioevents(io);
 
 process.on("unhandledRejection", (r, p) => console.log("Possibly Unhandled Rejection at: Promise ", p, " reason: ", r));
 
-server.listen(port, () => console.log("Server listening at port %d", port));
+server.listen(app.get("port"), () => console.log("Server is listening at port %d in %s mode", app.get("port"), app.get("env")));
