@@ -2,13 +2,18 @@
 
 Welcome to the new Hackbox Games repository.
 
+Installing:
+-----------
+- clone git repository
+- at project root, run `npm install`
+
+
 Commands:
 ---------
-Run from project root:
-- `npm run client` will start the react dev server
-- `npm run server` will start the hackboxgames server with hot-reloading
-- `npm run dev` starts both react and hackboxgames (with hot-reloading) servers
-- `npm start` will start the hackbox server normally
-- `npm run deploy` builds a static version of react client files, then starts the hackboxgames server
+- `npm run dev` starts both react (`/client`) and hackboxgames(`/server`) HMR servers
+  - use `npm run start:client` and `npm run start:server` to run individually
+- `npm run build` compiles static versions of client and server
+  - use `npm run build:client` and `npm run build:server` to run individually
+- `npm run serve` starts the hackboxgames server (which must already be built)
+- `npm start` builds and serves
 
-All `Create React App` commands run normally when executed in the `client/` directory.
