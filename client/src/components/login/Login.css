@@ -99,6 +99,16 @@ form{
     margin-bottom: 5%;
     margin-top: 5%;
 }
+.facebookSpan, .discordSpan {
+    composes: fab from global;
+    vertical-align: middle;
+}
+.facebookSpan {
+    composes: fa-facebook from global;
+}
+.discordSpan {
+    composes: fa-discord from global;
+}
 .pad{
     margin: 5%;
 }

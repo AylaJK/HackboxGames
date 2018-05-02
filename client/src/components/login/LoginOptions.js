@@ -33,10 +33,10 @@ export class LoginOptions extends React.Component {
                             <button className={[style.createBtn]} onClick={this.props.createUser}>Create a new Account</button>
                         </div>
                         <div className={style.buttonDiv}>
-                            <button className={[style.discordBtn]} onClick={this.props.discord}>Login with Discord<span className={"fab fa-discord"}/></button>
+                            <button className={[style.discordBtn]} onClick={this.props.discord}>Login with Discord<span className={style.discordSpan}/></button>
                         </div>
                         <div className={style.buttonDiv}>
-                            <button className={[style.facebookBtn]} onClick={this.props.facebook}>Login with Facebook<span className="fab fa-facebook"/></button>
+                            <button className={[style.facebookBtn]} onClick={this.props.facebook}>Login with Facebook<span className={style.facebookSpan}/></button>
                         </div>
                     </div>
                 </div>
