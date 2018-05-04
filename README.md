@@ -6,6 +6,7 @@ Installing:
 -----------
 - clone git repository
 - at project root, run `npm install`
+- configure the [server environment](server/ENVIRONMENT.md)
 
 
 Commands:
