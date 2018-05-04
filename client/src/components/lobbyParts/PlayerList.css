@@ -3,11 +3,11 @@
 }
 .lookingPlayer{
     composes: fas fa-user-secret from global;
-    color: white;
+    color: lightgrey;
 }
 .playerNotReady{
     composes: fa fa-user from global;
-    color: white;
+    color: lightseagreen;
 }
 .playerReady{
     composes: fa fa-user from global;

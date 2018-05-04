@@ -11,17 +11,17 @@
     align-items: center;
 }
 .ready{
+    composes: col-8 from global;
     display: flex;
     background-color: black;
     border: darkorange solid 2px;
-    width: 60%;
-    height: 60%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 1em;
 }
 .fields{
     display: flex;
     width:60%;
-    margin-bottom: 1em;
+    margin: 1em;
 }
