@@ -1,0 +1,109 @@
+.wrapper {
+    composes: container-fluid from "Styling/layout.scss";
+    background-color: #5C6976;
+    justify-content: center;
+    align-items: center;
+}
+.contain{
+    composes: container from global;
+    background-color: black;
+    border: darkorange solid 2px;
+    color: white;
+}
+.inside{
+    composes: col from global;
+    border-right: darkorange solid 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bottom{
+    composes: row from global;
+    background-color: black;
+    border-top: darkorange solid 2px;
+    justify-content: center;
+}
+.row{
+    composes: row from global;
+}
+form{
+    margin-bottom: 5%;
+    padding-top: 5%;
+    justify-content: left;
+}
+.left{
+    float: left;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.formGroup{
+    composes: form-group from global;
+    text-align: left;
+}
+.formControl{
+    composes: form-control from global;
+}
+.room{
+    margin-top: 500px;
+    padding-top: 5%;
+}
+.warning{
+    color: red;
+}
+.loader {
+    border: 2px solid grey;
+    border-radius: 50%;
+    border-top: 2px solid darkorange;
+    width: 1.4em;
+    height: 1.4em;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loadingPad{
+    padding-bottom: 1em;
+    display: flex;
+    justify-content: center;
+}
+.warningSpace{
+    color: black;
+}
+
+.discordBtn{
+    composes: btn btn-dark btn-lg from global;
+    background-color: #7289DA;
+    border-color: #7289DA;
+}
+.createBtn{
+    composes: btn btn-warning btn-lg from global;
+}
+.facebookBtn{
+    composes: btn btn-dark btn-lg from global;
+    background-color: #3B5998;
+}
+.facebookBtn:hover, .createBtn:hover, .discordBtn:hover{
+    background-color: darkorange;
+}
+.discordBtn, .facebookBtn, .createBtn{
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.pad{
+    margin: 5%;
+}
+.arrow {
+    float: left;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import style from "./App.css";
 import { Main } from "./Main";
-import { Header } from "./components/Header";
+import { Header } from "./components/header";
+import { Footer } from "./components/footer";
 import { subscribeToTimer } from './socket';
 
 class App extends Component {
@@ -29,12 +30,9 @@ class App extends Component {
   render() {
     return (
       <div className={style.app}>
-				<Header/>
-				<Main/>
-        <p className={style.intro}>
-          {this.state.response} <br />
-          {this.state.timestamp}
-        </p>
+        <Header/>
+        <Main/>
+        <Footer />
       </div>
     );
   }

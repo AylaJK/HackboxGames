@@ -1,0 +1,27 @@
+.wrapper{
+    composes: container-fluid from "Styling/layout.scss";
+    background-color: #5C6976;
+    justify-content: center;
+    padding: 1%;
+}
+.main{
+    composes: flex-fill from global;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ready{
+    composes: col-8 from global;
+    display: flex;
+    background-color: black;
+    border: darkorange solid 2px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+}
+.fields{
+    display: flex;
+    width:60%;
+    margin: 1em;
+}
