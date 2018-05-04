@@ -3,7 +3,8 @@ import style from "./App.css";
 import { Main } from "./Main";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import { subscribeToTimer } from './socket';
+import io from "socket.io-client";
+const socket = io();
 
 class App extends Component {
   state = {
@@ -13,9 +14,9 @@ class App extends Component {
 
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-    subscribeToTimer((err, timestamp) => this.setState({ timestamp }));
+      .then(res => console.log('REST Test: ', res))
+      .catch(err => console.log('REST Test: ', err));
+    this.callSocket();
   }
 
   callApi = async () => {
@@ -25,6 +26,11 @@ class App extends Component {
     if (response.status !== 200) throw Error(body.message);
 
     return body;
+  };
+
+  callSocket = () => {
+      socket.on ('hello', res => console.log('Websocket Test: ', res));
+      socket.emit('hello', {});
   };
 
   render() {
