@@ -1,14 +1,21 @@
 {
-  "name": "hackbox_games",
+  "name": "hackboxgames",
   "version": "0.0.1",
   "description": "HackboxGames",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd client && npm start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "deploy": "cd client && npm run build && cd .. && npm start"
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "postinstall": "npm run install:server && npm run install:client",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "build": "concurrently --names \"Server,Client\" -c \"green.bold,cyan.bold\" \"npm run build:server\" \"npm run build:client\"",
+    "dev:client": "cd client && npm start",
+    "dev:server": "cd server && npm start",
+    "dev": "concurrently --kill-others-on-fail --names \"Server,Client\" -c \"green.bold,cyan.bold\" \"npm run dev:server\" \"npm run dev:client\"",
+    "serve": "cd server && npm run serve",
+    "deploy": "npm run build && npm run serve",
+    "start": "npm run deploy"
   },
   "repository": {
     "type": "git",
@@ -16,19 +23,8 @@
   },
   "author": "Austin W. & Kayleigh K.",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
-    "socket.io": "^2.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "concurrently": "^3.5.1",
-    "nodemon": "^1.17.3"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "client/*"
-    ]
+    "concurrently": "^3.5.1"
   }
 }
