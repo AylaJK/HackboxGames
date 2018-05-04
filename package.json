@@ -9,10 +9,10 @@
     "postinstall": "npm run install:server && npm run install:client",
     "build:client": "cd client && npm run build",
     "build:server": "cd server && npm run build",
-    "build": "npm run build:server && npm run build:client",
+    "build": "concurrently --names \"Server,Client\" -c \"green.bold,cyan.bold\" \"npm run build:server\" \"npm run build:client\"",
     "dev:client": "cd client && npm start",
     "dev:server": "cd server && npm start",
-    "dev": "concurrently --kill-others-on-fail \"npm run dev:server\" \"npm run dev:client\"",
+    "dev": "concurrently --kill-others-on-fail --names \"Server,Client\" -c \"green.bold,cyan.bold\" \"npm run dev:server\" \"npm run dev:client\"",
     "serve": "cd server && npm run serve",
     "deploy": "npm run build && npm run serve",
     "start": "npm run deploy"
