@@ -11,12 +11,11 @@
 }
 .ready{
     composes: col-8 from global;
-    display: flex;
+    composes: flex-column from "Styling/layout.scss";
     background-color: black;
     border: darkorange solid 2px;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     padding: 1em;
 }
 .fields{

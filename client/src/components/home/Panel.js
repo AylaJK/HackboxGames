@@ -1,24 +1,21 @@
 import React from "react";
-import style from "./Panel.css";
+import style from "./Panel.scss";
 export class Panel  extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             loggedIn: false,
             hover: false,
-            background: "#5C6976",
         }
     }
     hoverOn(){
         this.setState({
             hover: true,
-            background: "darkorange",
         });
     }
     hoverOff(){
         this.setState({
             hover: false,
-            background: "#5C6976",
         });
     }
     render() {
@@ -81,12 +78,12 @@ export class Panel  extends React.Component {
         return (
             <div style={{order : this.props.order}} className={style.panel} onMouseEnter={this.hoverOn.bind(this)} onMouseLeave={this.hoverOff.bind(this)}>
                 <div className={style.innerPanel}>
-                    <div className={style.accent} style={{backgroundColor: this.state.background}}/>
+                    <div className={style.accent}/>
                     <div className={style.gameText}>
                         <h1>{this.props.name}</h1>
                     </div>
                     {btnDiv}
-                    <div className={style.accent} style={{backgroundColor: this.state.background}}/>
+                    <div className={style.accent}/>
                 </div>
             </div>
         );

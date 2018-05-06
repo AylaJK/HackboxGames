@@ -22,7 +22,7 @@
         margin: auto 10px;
     }
     span {
-        color: darkorange !important;
+        color: $accent-color !important;
         font-size: 1.5rem;
         @media (max-width: $header-logo-breakpoint) {
             display: none;

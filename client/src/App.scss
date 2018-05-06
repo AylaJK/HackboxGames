@@ -1,7 +1,9 @@
+@import "Styling/_variables.scss";
+
 .app {
     text-align: center;
     height: 100%;
-    background-color: #5C6976;
+    background-color: $page-background-color;
     composes: flex-column from "Styling/layout.scss";
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Login.css";
+import style from "./Login.scss";
 import {LoginOptions} from "./LoginOptions";
 import {CreateOptions} from "./CreateOptions";
 import { Link } from "react-router-dom";

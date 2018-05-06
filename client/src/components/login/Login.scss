@@ -1,17 +1,34 @@
+@import "Styling/_variables.scss";
+
+$contain-border: $accent-color solid 2px;
+
 .wrapper {
     composes: container-fluid from "Styling/layout.scss";
     justify-content: center;
     align-items: center;
+    form{
+        margin-bottom: 5%;
+        padding-top: 5%;
+        justify-content: left;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        text-decoration: none;
+        color: white;
+    }
 }
 .contain{
     composes: container from global;
     background-color: black;
-    border: darkorange solid 2px;
+    border: $contain-border;
     color: white;
 }
 .inside{
     composes: col from global;
-    border-right: darkorange solid 2px;
+    border-right: $contain-border;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,16 +36,11 @@
 .bottom{
     composes: row from global;
     background-color: black;
-    border-top: darkorange solid 2px;
+    border-top: $contain-border;
     justify-content: center;
 }
 .row{
     composes: row from global;
-}
-form{
-    margin-bottom: 5%;
-    padding-top: 5%;
-    justify-content: left;
 }
 .left{
     float: left;
@@ -52,7 +64,7 @@ form{
 .loader {
     border: 2px solid grey;
     border-radius: 50%;
-    border-top: 2px solid darkorange;
+    border-top: $contain-border;
     width: 1.4em;
     height: 1.4em;
     animation: spin 2s linear infinite;
@@ -84,7 +96,7 @@ form{
     background-color: #3B5998;
 }
 .facebookBtn:hover, .createBtn:hover, .discordBtn:hover{
-    background-color: darkorange;
+    background-color: $accent-color;
 }
 .discordBtn, .facebookBtn, .createBtn{
     width: 100%;
@@ -107,12 +119,4 @@ form{
 .arrow {
     float: left;
     cursor: pointer;
-}
-a{
-    text-decoration: none;
-    color: white;
-}
-a:hover{
-    text-decoration: none;
-    color: white;
 }

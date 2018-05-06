@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Login.css";
+import style from "./Login.scss";
 export class CreateOptions extends React.Component {
     render(){
         return(

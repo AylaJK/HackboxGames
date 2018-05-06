@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./SocialSet.css";
+import style from "./SocialSet.scss";
 export const SocialSet = (props) => {
     return (
         <div className={style.socialSet}>

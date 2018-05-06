@@ -1,0 +1,12 @@
+@import "Styling/_variables.scss";
+
+.socialSet{
+  height: 100%;
+  a:hover :global(.fab){
+      color: $accent-color;
+  }
+  :global(.fab){
+      transition: color .15s ease-in-out;
+  }
+}
+
