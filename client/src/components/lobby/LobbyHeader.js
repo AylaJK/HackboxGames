@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./LobbyHeader.css";
+import style from "./LobbyHeader.scss";
 export class LobbyHeader extends React.Component {
     render(){
         let btn;

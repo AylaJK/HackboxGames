@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Lobby.css";
+import style from "./Lobby.scss";
 export const ReadyUp = () => {
     return (
         <div className={style.ready}>

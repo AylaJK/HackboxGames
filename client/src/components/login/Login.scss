@@ -14,10 +14,17 @@ $contain-border: $accent-color solid 2px;
     a{
         text-decoration: none;
         color: white;
+        transition: color .15s ease-in-out;
+        :global(.fa) {
+            transition: color .15s ease-in-out;
+        }
     }
     a:hover{
         text-decoration: none;
-        color: white;
+        color: $accent-color;
+        :global(.fa) {
+            color: $accent-color;
+        }
     }
 }
 .contain{
@@ -94,9 +101,11 @@ $contain-border: $accent-color solid 2px;
 .facebookBtn{
     composes: btn btn-dark btn-lg from global;
     background-color: #3B5998;
+    border-color: #3B5998;
 }
 .facebookBtn:hover, .createBtn:hover, .discordBtn:hover{
     background-color: $accent-color;
+    border-color: $accent-color;
 }
 .discordBtn, .facebookBtn, .createBtn{
     width: 100%;
@@ -119,4 +128,14 @@ $contain-border: $accent-color solid 2px;
 .arrow {
     float: left;
     cursor: pointer;
+    transition: color .15s ease-in-out;
+    :global(.fa) {
+        transition: color .15s ease-in-out;
+    }
+}
+.arrow:hover {
+    color: $accent-color;
+    :global(.fa) {
+        color: $accent-color;
+    }
 }

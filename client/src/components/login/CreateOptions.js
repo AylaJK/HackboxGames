@@ -17,7 +17,7 @@ export class CreateOptions extends React.Component {
                                 <input type={"password"} className={"form-control"} id={"pwd"} placeholder={"Enter Password"} required/>
                             </div>
                             <div className="form-group">
-                                <input type={"password"} className={"form-control"} id={"pwd"} placeholder={"Confirm Password"} required/>
+                                <input type={"password"} className={"form-control"} id={"confpwd"} placeholder={"Confirm Password"} required/>
                             </div>
                             {this.props.messagediv}
                             <button type="submit" className={style.createBtn} disabled={this.props.submitting}>Create Account</button>

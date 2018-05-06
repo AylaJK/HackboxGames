@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Lobby.css";
+import style from "./Lobby.scss";
 import {LobbyHeader} from "./LobbyHeader";
 import {PlayerList} from "./PlayerList";
 import {ReadyUp} from "./ReadyUp";

@@ -1,7 +1,9 @@
+@import "Styling/_variables.scss";
+
 .gameHead{
     composes: row from global;
     width: 100%;
-    color: darkorange;
+    color: $accent-color;
     justify-content: center;
     margin-left: 0;
 }

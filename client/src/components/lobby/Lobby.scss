@@ -1,3 +1,5 @@
+@import "Styling/_variables.scss";
+
 .wrapper{
     composes: container-fluid from "Styling/layout.scss";
     justify-content: center;
@@ -13,7 +15,7 @@
     composes: col-8 from global;
     composes: flex-column from "Styling/layout.scss";
     background-color: black;
-    border: darkorange solid 2px;
+    border: $accent-color solid 2px;
     justify-content: center;
     align-items: center;
     padding: 1em;
