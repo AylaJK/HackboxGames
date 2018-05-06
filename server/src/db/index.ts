@@ -12,5 +12,6 @@ db.once("open", function() {
 export default db;
 
 export { Auth, IAuth, IAuthModel } from "./models/auth";
+export { Token, IToken, ITokenModel } from "./models/token";
 export { User, IUser, IUserModel } from "./models/user";
 

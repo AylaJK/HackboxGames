@@ -69,7 +69,7 @@ export interface IAuthSchema extends Document {
 }
 
 export const AuthSchema = new Schema({
-  user_id: String,
+  user_id: Schema.Types.ObjectId,
   local: LocalSchema,
   discord: OAuthSchema,
   facebook: OAuthSchema,
@@ -81,7 +81,7 @@ export interface IAuth extends IAuthSchema {}
 export interface IAuthModel extends Model<IAuth> {
 }
 
-export const Auth = model<IAuth>("auth", AuthSchema);
+export const Auth: IAuthModel = model<IAuth>("auth", AuthSchema);
 
 export default Auth;
 

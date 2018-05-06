@@ -5,7 +5,7 @@ import passportFacebook from "passport-facebook";
 /*import passportRememberMe from "passport-remember-me-extended";*/
 
 /*let logger = require('winston').loggers.get('auth');*/
-import { Auth, User, IUser } from "./db";
+import { Auth, Token, User, IUser } from "./db";
 
 const serializeUser = function(user: IUser, done: (err: any, id?: string) => void) {
   done(null, user._id);
@@ -54,26 +54,30 @@ const localsignup = new passportLocal.Strategy({ passReqToCallback: true }, func
       const auth = new Auth({ "user_id": user._id, "local.username": username.toLowerCase(), "local.email": req.body.email});
       await auth.local.updatePassword(password);
       await auth.save();
-      done(null, user);
+      deserializeUser(user._id, done);
     } catch (err) {
       done(err);
     }
   });
 });
 
-/*let rememberme = new passportRememberMe.Strategy(
-  function(token: string, done: (err: any, user?: any) => void) {
-    Auth.consumeRememberMeToken(token, function(err: any, user: any) {
-      if (err) return done(err);
-      if (!user) return done(null, false);
-      return done(null, user);
-    });
+/*const rememberme = new passportRememberMe.Strategy(
+  async function(token: string, done: (err: any, user?: any) => void) {
+    try {
+      const user = await Token.consumeToken(token);
+      if (!user) done(null, false);
+      else done(null, user);
+    } catch (err) {
+      done(err);
+    }
   },
-  function(user: any, done: (err: any, token?: string) => void) {
-    User.createRememberMeToken(user, function(err: any, token: string) {
-      if (err) return done(err);
-      return done(null, token);
-    });
+  async function(user: any, done: (err: any, token?: string) => void) {
+    try {
+      const token = await (new Token({ user_id: user._id })).save();
+      done(null, token.id);
+    } catch (err) {
+      done(err);
+    }
   }
 );*/
 
@@ -98,7 +102,7 @@ const discord = new passportDiscord.Strategy(
         const auth = new Auth({ "user_id": user._id, "discord.id": profile.id, "discord.name": profile.displayName});
         await auth.discord.storeToken(accessToken);
         await auth.save();
-        done(null, user);
+        deserializeUser(user._id, done);
       } catch (err) {
         done(err);
       }
@@ -127,7 +131,7 @@ const facebook = new passportFacebook.Strategy(
         const auth = new Auth({ "user_id": user._id, "facebook.id": profile.id, "facebook.name": profile.displayName});
         await auth.facebook.storeToken(accessToken);
         await auth.save();
-        done(null, user);
+        deserializeUser(user._id, done);
       } catch (err) {
         done(err);
       }
