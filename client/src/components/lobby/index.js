@@ -2,8 +2,8 @@ import React from "react";
 import style from "./Lobby.css";
 import {LobbyHeader} from "./LobbyHeader";
 import {PlayerList} from "./PlayerList";
-import {ReadyUp} from "../lobbyParts/ReadyUp";
-import {Searching} from "../lobbyParts/Searching";
+import {ReadyUp} from "./ReadyUp";
+import {Searching} from "./Searching";
 
 export class Lobby extends React.Component  {
     constructor(props){
