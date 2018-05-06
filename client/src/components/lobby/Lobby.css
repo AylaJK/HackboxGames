@@ -1,6 +1,5 @@
 .wrapper{
     composes: container-fluid from "Styling/layout.scss";
-    background-color: #5C6976;
     justify-content: center;
     padding: 1%;
 }
