@@ -56,14 +56,7 @@ form{
     border-top: 2px solid darkorange;
     width: 1.4em;
     height: 1.4em;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
-}
-
-/* Safari */
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
 }
 
 @keyframes spin {
