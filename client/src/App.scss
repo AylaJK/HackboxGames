@@ -6,7 +6,3 @@
     background-color: $page-background-color;
     composes: flex-column from "Styling/layout.scss";
 }
-
-.intro {
-    font-size: large;
-}

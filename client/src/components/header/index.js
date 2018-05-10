@@ -21,8 +21,8 @@ export class Header extends React.Component {
                         <img src="https://picsum.photos/64?image=11" alt="logo"></img>
                         <span>Hackbox Games</span>
                     </div>
+                    <div className={style.profile}><Profile/></div>
                     <div className={style.social}><SocialSet/></div>
-                    <div className={style.profile}><Profile /></div>
                 </nav>
             </header>
         )};

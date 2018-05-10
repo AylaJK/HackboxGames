@@ -38,7 +38,7 @@ class App extends Component {
       <div className={style.app}>
         <Header/>
         <Main/>
-        <Footer />
+        <Footer/>
       </div>
     );
   }

@@ -5,7 +5,6 @@
 .panelBox{
     composes: row from global;
     composes: flex-fill from "Styling/layout.scss";
-    display: flex;
-    flex-direction: row;
+    composes: flex-row from "Styling/layout.scss";
     flex-grow: 1;
 }

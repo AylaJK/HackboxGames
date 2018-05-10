@@ -9,8 +9,7 @@
     flex-grow: 1.5;
 }
 .innerPanel{
-    display: flex;
-    flex-direction: column;
+    composes: flex-column from "Styling/layout.scss";
     justify-content: center;
     align-items: center;
     height: 100%;
