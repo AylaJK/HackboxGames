@@ -46,6 +46,7 @@
     "@types/passport-discord": "^0.1.2",
     "@types/passport-facebook": "^2.1.8",
     "@types/passport-local": "^1.0.33",
+    "@types/passport-remember-me-extended": "0.0.0",
     "@types/socket.io": "^1.4.33",
     "@types/uuid": "^3.4.3",
     "nodemon": "^1.17.3",
