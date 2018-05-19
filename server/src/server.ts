@@ -16,7 +16,9 @@ const server = http.createServer(app);
 import router from "./router";
 
 import socketio from "socket.io";
-const io = socketio(server);
+const io = socketio();
+
+import sharedsession from "express-socket.io-session";
 
 import ioevents from "./socket";
 
@@ -35,6 +37,8 @@ app.use(passport.session());
 app.get("/", (req, res) => res.sendFile(path.resolve(clientDirectory, "build/index.html")));
 app.use(router);
 
+io.attach(server);
+io.use(sharedsession(session, cookieParser));
 ioevents(io);
 
 process.on("unhandledRejection", (r, p) => console.log("Possibly Unhandled Rejection at: Promise ", p, " reason: ", r));
