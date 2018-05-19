@@ -1,6 +1,7 @@
 @import "Styling/_variables.scss";
 
-$contain-border: $accent-color solid 2px;
+$border-size: solid 2px;
+$contain-border: $accent-color $border-size;
 
 .wrapper {
     composes: container-fluid from "Styling/layout.scss";
@@ -58,6 +59,10 @@ $contain-border: $accent-color solid 2px;
     composes: form-group from global;
     text-align: left;
 }
+.formGroupCheck{
+    composes: formGroup;
+    composes: form-check from global;
+}
 .formControl{
     composes: form-control from global;
 }
@@ -69,7 +74,7 @@ $contain-border: $accent-color solid 2px;
     color: red;
 }
 .loader {
-    border: 2px solid grey;
+    border: $border-size grey;
     border-radius: 50%;
     border-top: $contain-border;
     width: 1.4em;
