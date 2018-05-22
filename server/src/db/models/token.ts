@@ -8,7 +8,7 @@ export interface ITokenSchema extends Document {
   user_id: Schema.Types.ObjectId;
   expires?: string;
   hasExpired(): boolean;
-};
+}
 
 export const TokenSchema = new Schema({
   id: { type: String, required: true, unique: true },
@@ -16,11 +16,11 @@ export const TokenSchema = new Schema({
   expires: String,
 });
 
-TokenSchema.pre('init', true, function(next, done) {
+TokenSchema.pre("init", true, function(next, done) {
   next(); // Allow next parallel middleware to run at this point
   // TODO recursive calcuate
   // TODO confirm it will be unqiue / does not yet exist
-  this.id = crypto.randomBytes(180).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+  this.id = crypto.randomBytes(180).toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
   done();
 });
 
@@ -30,25 +30,25 @@ TokenSchema.methods.hasExpired = function() {
 };
 
 
-export interface IToken extends ITokenSchema {};
+export interface IToken extends ITokenSchema {}
 
 export interface ITokenModel extends Model<IToken> {
   viewToken(id: string): Promise<IUser>;
   consumeToken(id: string): Promise<IUser>;
-};
+}
 
 TokenSchema.statics.viewToken = function(id: string) {
   return new Promise(async (resolve, reject) => {
     try {
       const token = await this.findOne({ id }).exec();
-      if (!token) return reject(new Error ('Token not found'));
+      if (!token) return reject(new Error ("Token not found"));
       const user = await User.findById(token.user_id).exec();
       resolve(user);
     } catch (err) {
       reject(err);
     }
   });
-}
+};
 
 TokenSchema.statics.consumeToken = function(id: string) {
   return new Promise(async (resolve, reject) => {
@@ -57,7 +57,7 @@ TokenSchema.statics.consumeToken = function(id: string) {
       await this.findOne({ id }).remove().exec();
       resolve(user);
     } catch (err) {
-      reject(err)
+      reject(err);
     }
   });
 };

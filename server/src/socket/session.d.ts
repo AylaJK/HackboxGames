@@ -6,11 +6,14 @@
 import express from "express";
 import socketio from "socket.io";
 import passport from "passport";
-import sharedsession from "./session";
 
 declare function sharedsession(
   cookieParserMiddleware: express.RequestHandler,
   expressSessionMiddleware: express.RequestHandler,
-  passport: passport.PassportStatic) => (socket: socketio.Socket, next: (err?: any) => void) => void;
+  passport: passport.PassportStatic): sharedsession.SocketIoSharedSessionMiddleware;
+
+declare namespace sharedsession {
+  type SocketIoSharedSessionMiddleware = (socket: socketio.Socket, next: (err?: any) => void) => void;
+}
 
 export = sharedsession;
