@@ -1,4 +1,5 @@
-@import "Styling/_variables.scss";
+@import "Styling/_colors.scss";
+@import "Styling/_breakpoints.scss";
 
 .navbar {
     composes: navbar navbar-expand-sm navbar-dark bg-dark from global;
