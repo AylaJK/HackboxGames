@@ -18,7 +18,7 @@ export class Header extends React.Component {
             <header>
                 <nav className={style.navbar}>
                     <div className={style.logo}>
-                        <img src="https://picsum.photos/64?image=11" alt="logo"></img>
+                        <img src="Logo.svg" alt="logo"></img>
                         <span>Hackbox Games</span>
                     </div>
                     <div className={style.profile}><Profile/></div>
